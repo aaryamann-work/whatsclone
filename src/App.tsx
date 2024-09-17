@@ -131,7 +131,7 @@ function App() {
   const selectedConversation = {
     id: selectedContactId,
     ...conversations[selectedContactId],
-    lastMessage: conversations[selectedContactId].messages?.at(-1) ?? null,
+    lastMessage: conversations[selectedContactId]?.messages?.at(-1) ?? null,
   };
 
   const addContact = useCallback(
@@ -144,14 +144,13 @@ function App() {
     [conversations]
   );
 
-  const deleteContact = useCallback(
-    (contactId: string) =>
-      updateConversations({
-        type: "DELETE_CONTACT",
-        contactId,
-      }),
-    []
-  );
+  const deleteContact = useCallback((contactId: string) => {
+    updateConversations({
+      type: "DELETE_CONTACT",
+      contactId,
+    });
+    if (contactId === selectedContactId) setSelectedContactId("");
+  }, []);
 
   const addMessage = useCallback(
     (message: string) =>

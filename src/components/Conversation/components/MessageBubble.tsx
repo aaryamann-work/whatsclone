@@ -32,7 +32,7 @@ export const MessageBubble = ({
         </div>
       ) : null}
     </HoverCardTrigger>
-    <HoverCardContent>
+    <HoverCardContent style={{ width: "fit-content" }}>
       <InputDialog header="Edit Message" input="Message" onAction={onEdit}>
         Edit
       </InputDialog>

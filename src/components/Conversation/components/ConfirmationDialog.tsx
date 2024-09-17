@@ -30,7 +30,9 @@ export const ConfirmationDialog = ({
   children,
 }: Props) => (
   <AlertDialog>
-    <AlertDialogTrigger>{children ?? "Open Dialog"}</AlertDialogTrigger>
+    <AlertDialogTrigger className="w-100">
+      {children ?? "Open Dialog"}
+    </AlertDialogTrigger>
     <AlertDialogContent>
       <AlertDialogHeader>
         <AlertDialogTitle>{header ?? "Are you sure?"}</AlertDialogTitle>

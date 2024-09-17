@@ -68,7 +68,7 @@ export const ContactPreview = ({
       <PopoverTrigger>
         <DotsVerticalIcon />
       </PopoverTrigger>
-      <PopoverContent>
+      <PopoverContent style={{ width: "fit-content" }}>
         <ConfirmationDialog onAction={() => onDelete(contact.id)}>
           Delete
         </ConfirmationDialog>
